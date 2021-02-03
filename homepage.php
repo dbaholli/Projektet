@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+<?php
+
+if(isset($_COOKIE['is_logged_in'])){
+    if(isset($_COOKIE['user_email'])){
+        echo "Welcome " .$_COOKIE['user_email'];
+    }
+} else {
+    header("Location: register.php");
+}
+
+?>
+
+
+
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,8 +36,7 @@
                     <li class="current"><a href="about.html">ABOUT</a></li>
                     <li><a href="blog.html">BLOG</a></li>
                     <li><a href="sherbimet.html">SHERBIMET</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="register.php">Register</a></li>
+                    <li><a href="loginregister.php">Login/Register</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,7 +44,7 @@
 
     <section id="newsletter">
         <div class="container">
-            <h1>Merrni ofertat tona ne e-mail tuaj</h1>
+            <h1>Miresevini ne faqen tone me Userin tend personal</h1>
             <form>
                 <input type="email" placeholder="Enter Email..." />
                 <button type="submit" class="button_1">Merr Oferten</button>

@@ -35,3 +35,4 @@ const validoFormen = (ngjarje) => {
 }
 BtnSubmit.addEventListener('click', validoFormen);
 });
+
