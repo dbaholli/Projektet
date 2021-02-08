@@ -20,7 +20,7 @@ if(isset($_POST['login_btn'])) {
     if( isset($email) && !empty($email) && isset($password) && !empty($password) ) {
         if(is_email($email)) {
             $sql = "SELECT * FROM `users` WHERE `email`='$email'";
-            if($result = $mysqli->query($sql)) {
+            if($conn->query($sql)) {
                 if($result->num_rows > 0) {
                     $row = $result->fetch_assoc();
 
@@ -47,6 +47,7 @@ if(isset($_POST['login_btn'])) {
         $errors[] = "All fields are required!";
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +67,7 @@ if(isset($_POST['login_btn'])) {
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="blog.html">Products</a></li>
                     <li><a href="sherbimet.html">SHERBIMET</a></li>
                     <li class="current"><a href="login.php">Login</a></li>
                     <li><a href="register.php">Register</a></li>
